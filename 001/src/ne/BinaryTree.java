@@ -49,18 +49,14 @@ class BinaryTree
                 System.out.println(""); 
             } 
                
-            // Else go to right subtree and print all k-dl-2 distant nodes 
-            // Note that the right child is 2 edges away from left child 
+            
             else
                 printkdistanceNodeDown(node.right, k - dl - 2); 
    
-            // Add 1 to the distance and return value for parent calls 
             return 1 + dl; 
         } 
    
-        // MIRROR OF ABOVE CODE FOR RIGHT SUBTREE 
-        // Note that we reach here only when node was not found in left  
-        // subtree 
+   
         int dr = printkdistanceNode(node.right, target, k); 
         if (dr != -1)  
         { 
@@ -74,16 +70,13 @@ class BinaryTree
             return 1 + dr; 
         } 
    
-        // If target was neither present in left nor in right subtree 
         return -1; 
     } 
-   
-    // Driver program to test the above functions 
+
     public static void main(String args[])  
     { 
         BinaryTree tree = new BinaryTree(); 
    
-        /* Let us construct the tree shown in above diagram */
         tree.root = new Node(20); 
         tree.root.left = new Node(8); 
         tree.root.right = new Node(22); 
